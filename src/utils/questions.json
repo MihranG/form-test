@@ -1,0 +1,131 @@
+[
+    {
+        "id": "QUESTION_1",
+        "title": "What is your name?",
+        "description": "a paragraph of random text...!",
+        "type": "TEXT",
+        "options": [],
+        "value": null,
+        "validations": [
+            {
+                "type": "min",
+                "message": "Your name must not be shorter than 3 characters.",
+                "qty": 3
+            },
+            {
+                "type": "max",
+                "message": "Your name must not be longer than 25 characters.",
+                "qty": 25
+            }
+        ]
+    },
+    {
+        "id": "QUESTION_2",
+        "title": "What is your gender?",
+        "description": "a paragraph of random text...!",
+        "type": "RADIO",
+        "options": [
+            { "key": "FEMALE", "text": "Female" },
+            { "key": "MALE", "text": "Male" },
+            { "key": "OTHER", "text": "Other" }
+        ],
+        "value": null,
+        "validations": []
+    },
+    {
+        "id": "QUESTION_3",
+        "title": "What is your date of birth?",
+        "description": "a paragraph of random text...!",
+        "type": "DATE",
+        "options": [],
+        "value": null,
+        "conditions": [
+            {
+                "type": "not_equals",
+                "value": {
+                    "questionId": "QUESTION_2",
+                    "selectedValue": "OTHER"
+                }
+            }
+        ],
+        "validations": [],
+        "dependentOn": {
+            "questionId": "QUESTION_2",
+            "selectedValue": "OTHER"
+        }
+    },
+    {
+        "id": "QUESTION_4",
+        "title": "What insurances do you have?",
+        "description": "a paragraph of random text...!",
+        "type": "CHECKBOX",
+        "options": [
+            { "key": "HEALTH", "text": "Health" },
+            { "key": "LIABILITY", "text": "Liability" },
+            { "key": "LEGAL", "text": "Legal" },
+            { "key": "CAR", "text": "Car" }
+        ],
+        "value": null,
+        "validations": []
+    },
+    {
+        "id": "QUESTION_5",
+        "title": "What is your employment status?",
+        "description": "a paragraph of random text...!",
+        "type": "SELECT",
+        "options": [
+            { "key": "EMPLOYEE", "text": "Employee" },
+            { "key": "BUSINESS_OWNER", "text": "Business Owner" },
+            { "key": "HOUSE_SPOUSE", "text": "Housewife / Househusband" },
+            { "key": "RETIREE", "text": "Retiree" },
+            { "key": "STUDENT", "text": "Student" },
+            { "key": "SELF_EMPLOYED", "text": "Self-Employed" },
+            { "key": "UNEMPLOYED", "text": "Unemployed" }
+        ],
+        "value": null,
+        "validations": []
+    },
+    {
+        "id": "QUESTION_6",
+        "title": "What is your phone number?",
+        "description": "a paragraph of random text...!",
+        "type": "NUMBER",
+        "options": [],
+        "value": null,
+        "validations": [
+            {
+                "type": "min",
+                "qty": 7,
+                "message": "Your number must be only digits and not shorter than 7."
+            },
+            {
+                "type": "max",
+                "qty": 12,
+                "message": "Your number must be only digits and not longer than 12."
+            }
+        ],
+        "conditions": [
+            {
+                "type": "equals",
+                "value": {
+                    "questionId": "QUESTION_5",
+                    "selectedValue": "EMPLOYEE"
+                }
+            },
+            {
+                "type": "equals",
+                "value": {
+                    "questionId": "QUESTION_5",
+                    "selectedValue": "BUSINESS_OWNER"
+                }
+            },
+            {
+                "type": "equals",
+                "value": {
+                    "questionId": "QUESTION_5",
+                    "selectedValue": "STUDENT"
+                }
+            }
+        ]
+    }
+]

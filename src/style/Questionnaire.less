@@ -1,0 +1,49 @@
+.questionnaire {
+    width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+    // background-color: #f2f2f2;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+    &__title {
+        text-align: center;
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+
+    &__actions {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+
+        & button {
+            margin: 0 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 4px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+
+            &:hover {
+                background-color: #0056b3;
+            }
+        }
+
+        &__submit {
+            background-color: #28a745;
+            &:hover {
+                background-color: #1d923b;
+            }
+        }
+
+        &__reset {
+            background-color: #dc3545;
+            &:hover {
+                background-color: #a71d2a;
+            }
+        }
+    }
+}
