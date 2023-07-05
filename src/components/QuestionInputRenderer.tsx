@@ -1,4 +1,4 @@
-import QuestionInputText from './QuestionInputText.tsx'
+import {QuestionInputText} from './QuestionInputText.tsx'
 import { FC } from 'react'
 import { IOption, IQuestion } from '../types.ts'
 import { Input, Label, Select, RadioGroup, Radio, Checkbox } from '@fluentui/react-components'

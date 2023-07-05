@@ -1,5 +1,5 @@
 import { FluentProvider, webLightTheme } from '@fluentui/react-components'
-import Questionnaire from './components/Questionnaire.tsx'
+import {Questionnaire} from './components/Questionnaire.tsx'
 
 function App() {
     return (

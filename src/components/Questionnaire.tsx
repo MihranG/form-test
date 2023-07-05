@@ -1,11 +1,11 @@
 import { useDispatch, useSelector } from 'react-redux'
 import { RootState } from '../redux/store'
 import { resetQuestionnaire } from '../redux/questionnaireSlice.ts'
-import NewQuestion from './NewQuestion.tsx'
+import {QuestionComponent} from './Question.tsx'
 import { IQuestion } from '../types.ts'
 import { FC } from 'react'
 
-const Questionnaire: FC = () => {
+export const Questionnaire: FC = () => {
     const dispatch = useDispatch()
     const { questions, answers } = useSelector((state: RootState) => state.questionnaire)
     const lastEditingQuestion: number = useSelector((state: RootState) => {
@@ -31,7 +31,7 @@ const Questionnaire: FC = () => {
                     const expanded = indexOfQuestion === lastEditingQuestion
                     return (
                         <div key={question.id} className={`question-container ${expanded ? 'expanded' : 'collapsed'}`}>
-                            <NewQuestion question={question} key={question.id} expanded={expanded} />
+                            <QuestionComponent question={question} key={question.id} expanded={expanded} />
                         </div>
                     )
                 }
@@ -53,5 +53,3 @@ const Questionnaire: FC = () => {
         </div>
     )
 }
-
-export default Questionnaire

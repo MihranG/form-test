@@ -7,7 +7,7 @@ interface IProps {
     type: 'text' | 'number'
     disabled: boolean
 }
-const QuestionInputText: FC<IProps> = ({ value, handler, type, disabled }) => {
+export const QuestionInputText: FC<IProps> = ({ value, handler, type, disabled }) => {
     const isValueTypeString = typeof value === 'string'
     // the above check is for be sure not get ts complains
     return (
@@ -16,5 +16,3 @@ const QuestionInputText: FC<IProps> = ({ value, handler, type, disabled }) => {
         )
     )
 }
-
-export default QuestionInputText

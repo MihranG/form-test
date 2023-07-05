@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react'
-import Question from '../components/NewQuestion.tsx'
+import {QuestionComponent} from '../components/Question.tsx'
 import questions from '../utils/questions.json'
 import { configureStore } from '@reduxjs/toolkit'
 import questionnaireSlice, { initialState } from '../redux/questionnaireSlice.ts'
@@ -14,7 +14,7 @@ describe('Question component', () => {
     test('renders question title', () => {
         render(
             <Provider store={store}>
-                <Question expanded={true} question={question} />
+                <QuestionComponent expanded={true} question={question} />
             </Provider>
         )
 
